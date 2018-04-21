@@ -17,10 +17,9 @@ tr:nth-child(even) {
 }
 </style>
 <body>
-  <h2>Teacher Edit</h2>
   <form action="/teacher/update/<%= teacher.id %>" method="POST">
     <fieldset>
-    <legend>Teacher Edit</legend>
+    <legend><h2>Teacher Edit</h2></legend>
     firstName:
     <input type="text" name="firstName" value="<%= teacher.firstName %>"> <br/>
     lastName:
