@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Subjects</title>
+
+</head>
+
+<body>
+    <style>
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+        }
+
+        th {
+            border: 2px solid black
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        td p {
+            display: inline-table;
+        }
+    </style>
+    <h1>Subjects Data</h1>
+    <p style="text-align: center">
+        <a href="/subjects/add">Add Subject</a>
+    </p>
+    <table border>
+        <tr>
+            <th> subject_name</th>
+            <th>options</th>
+        </tr>
+        <% for(let i=0;i<subjects.length;i++){%>
+            <tr>
+                <td>
+                    <%= subjects[i].subject_name %>
+                </td>
+                <td>
+                    <p>
+                        <a href="/subjects/edit/<%= subjects[i].id %>">edit</a>
+                    </p>
+                    <p> | </p>
+                    <p>
+                        <a href="/subjects/delete/<%= subjects[i].id %>">delete</a>
+                    </p>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>

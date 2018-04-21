@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Teachers Data</title>
+</head>
+<body>
+    <style>
+        #form{
+            text-align: center;
+        }
+        p{
+            margin-right:100px;
+        }
+        .email{
+            margin-right:130px;
+        }
+        .submit{
+            margin-right:90px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <h1>Add Teachers Data</h1>
+    <p style="text-align: center; margin-left: 100px">
+        <a href="/teachers">show details</a>
+    </p>
+    <div id='form'>
+        <form action="/teachers/add" method="post">
+            <p>First Name:</p>
+            <input type="text" name='first_name'>
+            <br>
+            <p>Last Name:</p>
+            <input type="text" name='last_name'>
+            <br>
+            <p class='email'>Email:</p>
+            <input type="text" name='email'>
+            <br>
+            <br>
+            <input type="submit" class='submit' value='Add Teacher'>
+        </form>
+    </div>
+   
+</body>
+</html>
