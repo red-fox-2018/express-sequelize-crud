@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="margin: 0; padding: 0;">
+
+    <h2 style="text-align: center; margin-top: 300px">DELETE TEACHERS DATA</h2>
+    <div style="text-align:center">
+        <a href="/teachers">show all data</a>
+    </div> <br>
+    <form style="text-align: center" action="/teachers/delete/<%= teacher.id %>" method="POST">
+        First Name <br> <input style="width: 50%" type="text" name="first_name" value="<%= teacher.first_name %>"> <br>
+        Last Name <br> <input style="width: 50%" type="text" name="last_name" value="<%= teacher.last_name %>"> <br>
+        Email <br> <input style="width: 50%" type="text" name="email" value="<%= teacher.email %>"> <br>
+        <input style="width: 30%; background-color: blue;" type="submit" onclick="return alert('Data deleted!')" value="Delete teacher">
+    </form>
+</body>
+</html>
