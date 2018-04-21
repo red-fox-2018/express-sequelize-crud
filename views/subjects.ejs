@@ -52,7 +52,7 @@
                     </p>
                     <p> | </p>
                     <p>
-                        <a href="/subjects/delete/<%= subjects[i].id %>">delete</a>
+                        <a href="/subjects/delete/<%= subjects[i].id %>" onclick="return confirm('delete this subject?')">delete</a>
                     </p>
                 </td>
             </tr>

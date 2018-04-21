@@ -46,7 +46,7 @@
                 </p>
                 <p>    |    </p>
                 <p>
-                    <a href="/students/delete/<%= students[i].id %>">delete</a>
+                    <a href="/students/delete/<%= students[i].id %>" onclick="return confirm('delete this student?')">delete</a>
                 </p>
             </td>
         </tr>
