@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="margin: 0; padding: 0;">
+
+    <h2 style="text-align: center; margin-top: 100px;">STUDENTS DATA</h2>
+    <table border="2" style="text-align: center; margin: auto">
+        <tr>
+            <th> ID </th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>email</th>
+        </tr>
+        <% allStudentsData.forEach(data =>{ %>
+            <tr>
+                <td> <%= data.id %> </td>
+                <td> <%= data.first_name %> </td>
+                <td> <%= data.last_name %> </td>
+                <td> <%= data.email %> </td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
