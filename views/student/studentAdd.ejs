@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Add</title>
+    <style>
+        header{
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        form, h1{
+            text-align: center;
+            padding: 10px;
+        }
+        input[type=text] {
+            padding: 5px 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .alert {
+            padding: 15px;
+            color: #000;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Add</h1>
+        <a href="/students"><input type="submit" value="Show all Student" /></a>
+    </header>
+    <main>
+        <% if(msg){ %>
+            <div class="alert">
+                <strong><%= errMessage %></strong>
+            </div>
+        <% } %>
+        <form action="/students/add" method="post">
+            <label>First Name</label>
+            <br>
+            <input type="text" name="first_name" />
+            <br>
+            <label>Last Name</label>
+            <br>
+            <input type="text" name="last_name" />
+            <br>
+            <label>Email</label>
+            <br>
+            <input type="text" name="email" />
+            <br>
+            <input type="submit" value="ADD STUDENT" />
+        </form>
+    </main>
+</body>
+</html>
