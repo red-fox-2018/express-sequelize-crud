@@ -20,10 +20,11 @@
         <tbody>
           <% students.forEach((student) => { %>
             <tr>
-              <td><%= student.firstName%></td>
-              <td><%= student.lastName%></td>
-              <td><%= student.gender%></td>
-              <td><%= student.birthday%></td>
+              <td><%= student.firstName %></td>
+              <td><%= student.lastName %></td>
+              <td><%= student.gender %></td>
+              <td><%= student.birthday %></td>
+              <td><a href="/teacher/student_id/<%=student.id%>">edit</a></td>
             </tr>
           <% })%>
         </tbody>
