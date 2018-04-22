@@ -13,6 +13,8 @@ router.get('/teacher',function(req,res){
     })
 })
 
+//aaa
+
 router.post('/teacher',function(req,res){
    var newTeacher = {
        first : req.body.firstname,
