@@ -1,6 +1,6 @@
 const app = require('express')();
 const bodyParser = require('body-parser');
-let routes = require('./routes/index');
+const routes = require('./routes/index');
 
 app.use(bodyParser.urlencoded({
   extended: false
