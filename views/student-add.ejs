@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Students Data</title>
+</head>
+<body>
+    <% if(show.message!=''){ %>
+        <script>
+             alert('your input doesn\'t meet email criteria \n or already available')
+        </script>
+    <%} else {%>
+         <% if(show.succes!=''){ %>
+        <script>
+            alert('add student succes')
+        </script>
+        <%}%>
+    <%}%>
+    <style>
+        #form{
+            text-align: center;
+        }
+        p{
+            margin-right:100px;
+        }
+        .email{
+            margin-right:130px;
+        }
+        .submit{
+            margin-right:90px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <h1>Add Students Data</h1>
+    <p style="text-align: center; margin-left: 100px">
+        <a href="/students">show details</a>
+    </p>
+    <div id='form'>
+        <form action="/students/add" method="post">
+            <p>First Name:</p>
+            <input type="text" name='first_name'>
+            <br>
+            <p>Last Name:</p>
+            <input type="text" name='last_name'>
+            <br>
+            <p class='email'>Email:</p>
+            <input type="text" name='email'>
+            <br>
+            <br>
+            
+            <input type="submit" class='submit' value='Add Student'>
+        </form>
+    </div>
+   
+</body>
+</html>

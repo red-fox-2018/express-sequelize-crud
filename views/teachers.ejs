@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teachers</title>
+    
+</head>
+<body>
+    <style>
+    table{
+        margin:auto;
+        border-collapse: collapse;
+    }
+    h1,h3{
+        text-align: center;
+    }
+    th{
+        border:2px solid black
+    }
+    th,td{
+        padding: 10px;
+        text-align: center;
+    }
+    td p{
+            display: inline-table;
+    }
+    
+    
+    </style>
+    <h1>Teachers Data</h1>
+    <p style="text-align: center"><a href="/teachers/add">Add Teacher</a></p>
+    <table border>
+        <tr>
+            <th> first_name</th>
+            <th>last_name</th>
+            <th>email</th>
+            <th>options</th>
+        </tr>
+        <% for(let i=0;i<teachers.length;i++){%>
+        <tr>
+            <td>  <%= teachers[i].first_name %> </td>
+            <td>  <%= teachers[i].last_name %> </td>
+            <td>  <%= teachers[i].email %> </td>
+            <td>
+                <p>
+                    <a href="/teachers/edit/<%= teachers[i].id %>">edit</a>
+                </p>
+                <p>    |    </p>
+                <p>
+                    <a href="/teachers/delete/<%= teachers[i].id %>" onclick="return confirm('delete this teacher?')">delete</a>
+                </p>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>

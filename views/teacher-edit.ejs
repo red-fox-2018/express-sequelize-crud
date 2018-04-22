@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Teachers Data</title>
+</head>
+
+<body>
+    <% if(show.message!=''){ %>
+        <script>
+            alert('your input doesn\'t meet email criteria \n or already available')
+        </script>
+    <%} else {%>
+        <% if(show.succes!=''){ %>
+            <script>
+                alert('edit teacher succes')
+            </script>
+        <%}%>
+    <%}%>
+    <style>
+        #form {
+            text-align: center;
+        }
+
+        .pForm {
+            margin-right: 100px;
+        }
+
+        .email {
+            margin-right: 130px;
+        }
+
+        .submit {
+            margin-right: 90px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+         table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th {
+            border: 2px solid black
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+       
+    </style>
+    <h1>Edit Teachers Data</h1>
+    <p>
+        <a href="/teachers">show details</a>
+    </p>
+    <div id='form'>
+        <form action="/teachers/edit/<%= show.teacher.id %>" method="post">
+            <p class='pForm'>First Name:</p>
+            <input type="text" name='first_name'>
+            <br>
+            <p class='pForm'>Last Name:</p>
+            <input type="text" name='last_name'>
+            <br>
+            <p class='email'>Email:</p>
+            <input type="text" name='email'>
+            <br>
+            <br>
+            <input type="submit" class='submit' value='Edit Teacher'>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Subjects Data</title>
+</head>
+<body>
+    <% if(show.succes!=''){ %>
+        <script>
+            alert('add subject succes')
+        </script>
+    <%}%>
+    <style>
+        #form{
+            text-align: center;
+        }
+        p{
+            margin-right:100px;
+        }
+        .email{
+            margin-right:130px;
+        }
+        .submit{
+            margin-right:90px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <h1>Add Subjects Data</h1>
+    <p style="text-align: center; margin-left: 100px">
+        <a href="/subjects">show details</a>
+    </p>
+    <div id='form'>
+        <form action="/subjects/add" method="post">
+            <p>Subject Name:</p>
+            <input type="text" name='subject_name'>
+            <br>
+            <br>
+            <input type="submit" class='submit' value='Add Subject'>
+        </form>
+    </div>
+   
+</body>
+</html>
