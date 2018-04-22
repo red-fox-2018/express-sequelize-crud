@@ -20,11 +20,13 @@ router.post('/teacher',function(req,res){
        first : req.body.firstname,
        last : req.body.lastname
    }
-   teacher.create()
-   res.render('teacher',{
-       newTeacher:newTeacher
+   
+   teacher.create({first_name:req.body.firstname, last_name:req.body.lastname})
+   .then(teacher=>{
+    res.render('teacher',{
+        newTeacher:teacher
+    })
    })
-
 })
 
 
