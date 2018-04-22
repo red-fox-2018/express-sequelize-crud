@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web School</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/index-style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <a class="navbar-brand" href="/">Web School</a>
+    </nav>
+
+    <div class="container mt-5">
+      <a href="/student/add-student" class="btn btn-primary">Add Student</a>
+      <div class="table-responsive-sm">
+        <table class="table mt-2">
+          <thead class="thead bg-info text-white">
+            <tr>
+              <th>No</th>
+              <th>First name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% Students.forEach((student, i) => { %>
+              <tr>
+                <td><%= i+1 %></td>
+                <td> <%= student.first_name%> </td>
+                <td> <%= student.last_name%> </td>
+                <td> <%= student.email %> </td>
+                <td>
+                  <a href='/student/edit-student/<%= student.id %>'>Edit</a> |
+                  <a class="text-danger" href='/student/delete/<%= student.id %>' onclick="return confirm('delete this student?')"> delete</a>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
