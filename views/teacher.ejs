@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/teacher" method="post">
+    Teacher list : 
+    <ul>
+    <% teachers.forEach(function(teacher) { %>
+        <li><%=teacher.first_name %> <%= teacher.last_name%></li>
+    <% }); %><br>
+    Add new teacher : 
+    First name : <input type="text" name="firstname">
+    Last name: <input type="text" name="lastname">
+    <input type="submit" value="submit"></button>
+    New Teacher Masuk <%= newTeacher%>
+    </ul>
+    </form>
+</body>
+</html>
