@@ -1,26 +1,26 @@
 
-const { Student } = require('./../models');
+const { Subject } = require('./../models');
 
-class StudentController {
+class SubjectController {
   /**
    * getAll()
    */
   static getAll() {
-    return Student.findAll();
+    return Subject.findAll();
   }
   /**
    * insert()
    */
   static insert(values) {
-    return Student.create(values);
+    return Subject.create(values);
   }
   /**
    * delete()
    */
   static delete(id) {
-    return Student.findById(id)
-      .then(Student => {
-        return Student.destroy();
+    return Subject.findById(id)
+      .then(Subject => {
+        return Subject.destroy();
       })
       .catch(err => {
         console.log(err.message);
@@ -30,15 +30,15 @@ class StudentController {
    * findById()
    */
   static findById(id) {
-    return Student.findById(id);
+    return Subject.findById(id);
   }
   /**
    * update()
    */
   static update(id, values) {
-    return Student.findById(id)
-      .then(Student => {
-        return Student.update(values);
+    return Subject.findById(id)
+      .then(Subject => {
+        return Subject.update(values);
       })
       .catch(err => {
         console.log(err);
@@ -46,4 +46,4 @@ class StudentController {
   }
 }
 
-module.exports = StudentController;
+module.exports = SubjectController;

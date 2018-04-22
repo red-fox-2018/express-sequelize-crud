@@ -1,60 +1,60 @@
 
 const express = require('express')
 const router = express.Router()
-const { TeacherController } = require('./../controllers');
+const { StudentController } = require('./../controllers');
 
-// GET /teacher | GET
+// GET /student | GET
 router.get('/', (req, res) => {
-  TeacherController
+  StudentController
     .getAll()
-    .then(teachers => {
-      res.render('teacher/page-teacher', { teachers });
+    .then(students => {
+      res.render('student/page-student', { students });
     }).catch(err => {
       console.log(err);
-      res.redirect('/teacher');
+      res.redirect('/student');
     });
 });
 
-// POST /teacher | POST
+// POST /student | POST
 router.post('/', (req, res) => {
   let values = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email
   }
-  TeacherController.insert(values)
+  StudentController.insert(values)
     .then(() => {
-      res.redirect('/teacher');
+      res.redirect('/student');
     })
     .catch((err) => {
       console.log(err);
-      res.redirect('/teacher');
+      res.redirect('/student');
     })
 });
 
-// DELETE /teacher/delete/:id | GET
+// DELETE /student/delete/:id | GET
 router.get('/delete/:id', (req, res) => {
   let id = req.params.id;
-  TeacherController.delete(id)
+  StudentController.delete(id)
     .then(() => {
-      res.redirect('/teacher');
+      res.redirect('/student');
     })
     .catch(err => {
-      res.redirect('./teacher');
+      res.redirect('./student');
       console.log(err.message);
     })
 });
 
-// UPDATE /teacher/update/:id | GET
+// UPDATE /student/update/:id | GET
 router.get('/update/:id', (req, res) => {
   let id = req.params.id;
-  TeacherController.findById(id)
-    .then(teacher => {
-      res.render('teacher/page-teacher-edit', { teacher });
+  StudentController.findById(id)
+    .then(student => {
+      res.render('student/page-student-edit', { student });
     })
     .catch(err => {
       console.log(err.message);
-      res.redirect('/teacher');
+      res.redirect('/student');
     });
 });
 
@@ -64,13 +64,13 @@ router.post('/update/:id', (req, res) => {
   let lastName = req.body.lastName;
   let email = req.body.email;
 
-  TeacherController.update(id, { firstName, lastName, email })
+  StudentController.update(id, { firstName, lastName, email })
     .then(() => {
-      res.redirect('/teacher');
+      res.redirect('/student');
     })
     .catch(err => {
       console.log(err.message);
-      res.redirect('/teacher');
+      res.redirect('/student');
     });
 });
 
