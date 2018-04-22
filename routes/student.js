@@ -15,8 +15,13 @@ router.get('/', (req, res) => {
     });
 });
 
+// @router GET /student/add
+router.get('/add', (req, res) => {
+  res.render('student/page-student-add');
+});
+
 // POST /student | POST
-router.post('/', (req, res) => {
+router.post('/add', (req, res) => {
   let values = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,

@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 const { TeacherController } = require('./../controllers');
 
-// GET /teacher | GET
+// @router GET /teacher
 router.get('/', (req, res) => {
   TeacherController
     .getAll()
@@ -15,8 +15,13 @@ router.get('/', (req, res) => {
     });
 });
 
-// POST /teacher | POST
-router.post('/', (req, res) => {
+// @router GET /teacher/add
+router.get('/add', (req, res) => {
+  res.render('techer/page-teacher-add');
+});
+
+// @router POST /teacher/add
+router.post('/add', (req, res) => {
   let values = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
