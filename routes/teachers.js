@@ -9,16 +9,15 @@ Models.teacher.findAll()
     })
 })
 router.get('/add',(req,res)=>{
-    res.render('teacher-add')
+    res.render('teacher-add', { show: { message: '', succes: '' } })
 })
 router.post('/add', (req, res) => {
-    res.render('teacher-add')
     Models.teacher.create(req.body)
     .then(teacher => {
-        console.log(teacher)
+        res.render('teacher-add', { show: { message: '', succes: true } })
     })
     .catch(err => {
-        console.log(err)
+        res.render('teacher-add', { show: err })
     })
 })
 router.get('/edit/:id',(req,res)=>{
@@ -27,10 +26,7 @@ router.get('/edit/:id',(req,res)=>{
             where: { id: req.params.id }
         }
     ).then(data => {
-        if(data==null){
-        res.send('404-notFound')
-        }
-        res.render('teacher-edit',{teacher:data})
+        res.render('teacher-edit', { show: { teacher: data, succes: '', message: '' } })
     })
     .catch(err => {
         console.log(err)
@@ -44,11 +40,10 @@ router.post('/edit/:id', (req, res) => {
             where: { id: req.params.id }
         }
     ).then(data => {
-        
-        res.render('teacher-edit', { teacher: data })
+        res.render('teacher-edit', { show: { teacher: data, succes: data, message: '' } })
     })
     .catch(err => {
-        console.log(err)
+        res.render('teacher-edit', { show: { teacher: { id: req.params.id }, message: 'false' } })
     })
     
 })

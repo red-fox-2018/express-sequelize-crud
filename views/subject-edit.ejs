@@ -6,6 +6,11 @@
 </head>
 
 <body>
+    <% if(show.succes!=''){ %>
+        <script>
+            alert('edit subject succes')
+        </script>
+    <%}%>
     <style>
         #form {
             text-align: center;
@@ -47,7 +52,7 @@
         <a href="/subjects">show details</a>
     </p>
     <div id='form'>
-        <form action="/subjects/edit/<%= subject.id %>" method="post">
+        <form action="/subjects/edit/<%= show.subject.id %>" method="post">
             <p class='pForm'>Subject Name:</p>
             <input type="text" name='subject_name'>
             <br>

@@ -9,16 +9,15 @@ Models.student.findAll()
     })
 })
 router.get('/add',(req,res)=>{
-    res.render('student-add')
+    res.render('student-add', { show: { message: '',succes:''} })
 })
 router.post('/add', (req, res) => {
-    res.render('student-add')
     Models.student.create(req.body)
     .then(student => {
-        console.log(student)
+        res.render('student-add',{show: {message:'',succes:true}})
     })
     .catch(err => {
-        console.log(err)
+        res.render('student-add', {show:err})
     })
 })
 router.get('/edit/:id',(req,res)=>{
@@ -27,13 +26,10 @@ router.get('/edit/:id',(req,res)=>{
             where: { id: req.params.id }
         }
     ).then(data => {
-        if(data==null){
-        res.send('404-notFound')
-        }
-        res.render('student-edit',{student:data})
+        res.render('student-edit', { show: { student: data, succes: '', message: '' } })
     })
     .catch(err => {
-        console.log(err)
+        console.log(err.message)
     })
     
 })
@@ -44,15 +40,15 @@ router.post('/edit/:id', (req, res) => {
             where: { id: req.params.id }
         }
     ).then(data => {
-        
-        res.render('student-edit', { student: data })
+        res.render('student-edit', { show:{student: data, succes:data, message:'' }})
     })
     .catch(err => {
-        console.log(err)
+        res.render('student-edit', { show: { student: { id: req.params.id}, message:'false' }})
     })
     
 })
 router.get('/delete/:id',(req,res)=>{
+    
     Models.student.destroy(
         {
             where:{id:req.params.id}

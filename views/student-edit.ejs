@@ -6,6 +6,17 @@
 </head>
 
 <body>
+    <% if(show.message!=''){ %>
+        <script>
+            alert('your input doesn\'t meet email criteria \n or already available')
+        </script>
+    <%} else {%>
+        <% if(show.succes!=''){ %>
+            <script>
+                alert('edit student succes')
+            </script>
+            <%}%>
+        <%}%>
     <style>
         #form {
             text-align: center;
@@ -47,7 +58,7 @@
         <a href="/students">show details</a>
     </p>
     <div id='form'>
-        <form action="/students/edit/<%= student.id %>" method="post">
+        <form action="/students/edit/<%= show.student.id %>" method="post">
             <p class='pForm'>First Name:</p>
             <input type="text" name='first_name'>
             <br>

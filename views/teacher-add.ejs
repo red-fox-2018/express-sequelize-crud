@@ -4,6 +4,17 @@
     <title>Add Teachers Data</title>
 </head>
 <body>
+    <% if(show.message!=''){ %>
+        <script>
+            alert('your input doesn\'t meet email criteria \n or already available')
+        </script>
+    <%} else {%>
+        <% if(show.succes!=''){ %>
+            <script>
+                alert('add teacher succes')
+            </script>
+        <%}%>
+    <%}%>
     <style>
         #form{
             text-align: center;

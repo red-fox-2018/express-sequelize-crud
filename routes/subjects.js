@@ -9,16 +9,15 @@ Models.subject.findAll()
     })
 })
 router.get('/add',(req,res)=>{
-    res.render('subject-add')
+    res.render('subject-add', { show: { succes: '' } })
 })
 router.post('/add', (req, res) => {
-    res.render('subject-add')
     Models.subject.create(req.body)
     .then(subject => {
-        console.log(subject)
+        res.render('subject-add', { show: { succes: true } })
     })
     .catch(err => {
-        console.log(err)
+        res.render('subject-add', { show: err })
     })
 })
 router.get('/edit/:id',(req,res)=>{
@@ -27,10 +26,7 @@ router.get('/edit/:id',(req,res)=>{
             where: { id: req.params.id }
         }
     ).then(data => {
-        if(data==null){
-        res.send('404-notFound')
-        }
-        res.render('subject-edit',{subject:data})
+        res.render('subject-edit', { show: { subject: data, succes:'' }})
     })
     .catch(err => {
         console.log(err)
@@ -44,8 +40,7 @@ router.post('/edit/:id', (req, res) => {
             where: { id: req.params.id }
         }
     ).then(data => {
-        
-        res.render('subject-edit', { subject: data })
+        res.render('subject-edit', { show: { subject: data, succes: 'true'} })
     })
     .catch(err => {
         console.log(err)
