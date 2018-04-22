@@ -25,6 +25,7 @@
               <td><%= student.gender %></td>
               <td><%= student.birthday %></td>
               <td><a href="/teacher/student_id/<%=student.id%>">edit</a></td>
+              <td> <a href="/teacher/delete/student_id/<%=student.id%>">delete</a> </td>
             </tr>
           <% })%>
         </tbody>
