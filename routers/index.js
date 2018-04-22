@@ -84,6 +84,13 @@ router.get('/teacher/student_id/:student_id', function (req, res) {
   })
 })
 
+router.get('/teacher/delete/student_id/:id', function (req, res) {
+  let studentId = req.params.id;
+  Student.destroy({where: {id: studentId}}).then(() => {
+    res.redirect('/teacher')
+  })
+})
+
 
 
 
