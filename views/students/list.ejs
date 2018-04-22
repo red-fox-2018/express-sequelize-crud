@@ -17,7 +17,9 @@
           <td> <%= student.first_name%> </td>
           <td> <%= student.last_name%> </td>
           <td> <%= student.email %> </td>
-          <td> <a href='/student/delete/<%= student.id %>' onclick="return confirm('delete this student?')"> delete</a> </td>
+          <td> <a href='/student/delete/<%= student.id %>' onclick="return confirm('delete this student?')"> delete</a> |
+            <a href='/student/edit-student/<%= student.id %>'>Edit</a>
+          </td>
         </tr>
       <% }) %>
     </table>

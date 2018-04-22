@@ -1,7 +1,7 @@
 const routes = require ('express').Router();
 const teacher = require ('./teachers');
 const student = require ('./students');
-const { Teacher, Student, Subject} = require('../models')
+const subject = require ('./subjects');
 
 routes.get('/', function(req, res){
   res.render('home', {title: 'Web School'})
@@ -9,6 +9,7 @@ routes.get('/', function(req, res){
 
 routes.use('/teacher', teacher)
 routes.use('/student', student)
+routes.use('/subject', subject)
 
 
 module.exports = routes;

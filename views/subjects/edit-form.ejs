@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Subject Form</title>
+  </head>
+  <body>
+    <form action="/subject/edit-subject/<%= subject.id %>" method="POST">
+      First name: <br/>
+      <input type="text" name="subjectname" value="<%= subject.subject_name %>"> <br/>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

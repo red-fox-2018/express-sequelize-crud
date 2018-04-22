@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>subjects Data</title>
+  </head>
+  <body>
+    <h2>Subjects Data: </h2>
+    <a href="/subject/add-subject">Add subject</a>
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Action</th>
+      </tr>
+      <% Subjects.forEach(subject => { %>
+        <tr>
+          <td> <%= subject.subject_name%> </td>
+          <td> <a href='/subject/edit-subject/<%= subject.id %>'>Edit</a> |
+               <a href='/subject/delete/<%= subject.id %>' onclick="return confirm('delete this subject?')"> delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

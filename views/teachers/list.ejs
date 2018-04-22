@@ -10,12 +10,16 @@
         <th>First name</th>
         <th>Last Name</th>
         <th>Email</th>
+        <th>Action<th>
       </tr>
       <% Teachers.forEach(teacher => { %>
         <tr>
           <td> <%= teacher.first_name%> </td>
           <td> <%= teacher.last_name%> </td>
           <td> <%= teacher.email %> </td>
+          <td> <a href='/teacher/edit-teacher/<%= teacher.id %>'>Edit</a> |
+               <a href='/teacher/delete/<%= teacher.id %>' onclick="return confirm('delete this teacher?')"> delete</a>
+          </td>
         </tr>
       <% }) %>
     </table>

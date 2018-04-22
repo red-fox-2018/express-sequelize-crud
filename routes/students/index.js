@@ -1,26 +1,16 @@
 const student = require ('express').Router();
-const { Teacher, Student, Subject} = require('../../models')
+const StudentController = require('../../controllers/student')
 
-student.get('/', function(req, res){
-  Student.findAll()
-  .then( students => {
-    res.render('students/list', {Students: students})
-  })
-})
+student.get('/', StudentController.list)
 
-student.get('/add-student', function(req, res){
-  res.render('students/form')
-})
+student.get('/add-student', StudentController.create_get)
 
-student.post('/add-student', function(req, res){
-  Student.create({
-    first_name: req.body.firstname,
-    last_name: req.body.lastname,
-    email: req.body.email
-  })
-  .then(() => {
-    res.redirect('/student')
-  })
-})
+student.post('/add-student', StudentController.create_post)
+
+student.get('/edit-student/:id', StudentController.update_get)
+
+student.post('/edit-student/:id', StudentController.update_post)
+
+student.get('/delete/:id', StudentController.delete)
 
 module.exports = student;
