@@ -15,6 +15,12 @@ router.get('/', (req, res) => {
     });
 });
 
+// @router GET /subject/add
+router.get('/add', (req, res) => {
+  res.render('subject/page-subject-add');
+});
+
+
 // POST /subject | POST
 router.post('/', (req, res) => {
   let values = {
