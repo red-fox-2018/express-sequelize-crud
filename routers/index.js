@@ -47,7 +47,7 @@ router.post('/student', urlencodedParser, function (req, res, next) {
       // showError(err)
     }
   })
-  res.render('student-form')
+  res.redirect('/student')
 })
 
 router.get('/teacher', function (req, res) {
@@ -56,6 +56,34 @@ router.get('/teacher', function (req, res) {
   })
   console.log('enter Teacher page');
 })
+
+router.get('/teacher/student_id/:student_id', function (req, res) {
+  let studentId = req.params.student_id
+  Student.findById(studentId).then((student) => {
+    // res.send(student.firstN)
+    res.render('update_form', {student: student});
+    router.post('/update', urlencodedParser, function (req, res) {
+      let firstName = req.body.firstName;
+      let lastName = req.body.lastName;
+      let gender = req.body.gender;
+      let birthday = req.body.birthday;
+      Student.update({
+        firstName: firstName,
+        lastName: lastName,
+        gender: gender,
+        birthday: birthday,
+        updatedAt: new Date()
+      }, {
+        where: {id: studentId}
+      }).then(() => {
+        res.redirect('/teacher')
+
+      })
+      // res.send(req.body)
+    })
+  })
+})
+
 
 
 
