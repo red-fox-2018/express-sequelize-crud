@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>
+  list name of teacher
+</title>
+<body class="container">
+
+<main>
+    <div class="jumbotron">
+        <h1>List of the Teachers</h1>
+        <table>
+          <th>nama depan</th>
+          <th>nama belakang</th>
+          <th>alamat email</th>
+          <th>action</th>
+        <% for(var i=0; i < datanyasiteachers.length; i++) { %>
+           <tr>
+             <td><%= datanyasiteachers[i].first_name %></td>
+             <td><%= datanyasiteachers[i].last_name %></td>
+             <td><%= datanyasiteachers[i].email %></td>
+             <td><a href ='/teacher/edit'> edit /</a><td>
+             <!-- <td><a href ='./teacher'> delete</a><td>  -->
+           </tr>
+        <% } %>
+        </table>
+    </div>
+</main>
+
+<footer>
+  <h3>
+  <a href = "/teacher"> Teachers</a>
+  <a href = "/subject"> Subjects</a>
+  <a href = "/student"> Students</a>
+  </h3>
+</footer>
+
+</body>
+</html>
