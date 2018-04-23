@@ -33,7 +33,11 @@ class SubjectController {
          .findById(req.params.id)
          .then(subject => {
             subject
-               .getTeachers()
+               .getTeachers({
+                  order: [
+                     ['first_name', 'ASC']
+                  ]
+               })
                .then(teachers => {
                   res.render('subjects/teachers', {
                      subjectName: subject.name,
