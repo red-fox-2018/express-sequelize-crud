@@ -14,7 +14,7 @@
                 <tr>
                     <th><%= subject_data[i].id%></th>
                     <th><%= subject_data[i].subject_name%></th>
-                    <th><a href="/subjects/edit-subject?id=<%=subject_data[i].id%>">edit</a> | <a href="/subjects/delete-subject?id=<%=subject_data[i].id%>">delete</a></th>
+                    <th><a href="/subjects/edit-subject/<%=subject_data[i].id%>">edit</a> | <a href="/subjects/delete-subject/<%=subject_data[i].id%>" onclick="return confirm('delete this Subject?')">delete</a></th>
                 </tr>
             <%}%>
           </table>
