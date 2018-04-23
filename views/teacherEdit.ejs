@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Teacher List</title>
+  </head>
+  <body>
+    <form action = '/teacher/edit' method="post">
+      <input name ="teacherID" type="hidden" value<%= Teacher.id%>>
+      <input name ="firstname" type="text" value=firstname><br>
+      <input name ="lastname" type="text" value=lastname><br>
+      <input name ="email"  type="text" value=email>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
