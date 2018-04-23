@@ -1,0 +1,21 @@
+<%- include ./header.ejs %>
+
+<h2>Add Students Data</h2>
+<br>
+<h3><a href="/student">show all data</a></h3>
+
+
+<form action="/student/add" method = "POST">
+    First name:<br>
+    <input type="text" name="first_name" value="">
+    <br>
+    Last name:<br>
+    <input type="text" name="last_name" value="">
+    <br>
+    Email:<br>
+    <input type="text" name="email" value="">
+    <br><br>
+    <input type="submit" value="Submit">
+  </form> 
+
+<%- include ./footer.ejs%>
