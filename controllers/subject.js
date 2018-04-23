@@ -26,9 +26,9 @@ class Controller {
       })
   }
 
-  static add(subject_name, callback) {
+  static add(SubjectName, callback) {
     Model.Subject.create({
-        subject_name
+        SubjectName
       })
       .then(subject => {
         callback(null, subject);
@@ -38,9 +38,9 @@ class Controller {
       })
   }
 
-  static edit(id, subject_name, callback) {
+  static edit(id, SubjectName, callback) {
     Model.Subject.update({
-        subject_name
+        SubjectName
       }, {
         where: {
           id: id
