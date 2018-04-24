@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <title>Students Data</title>
   </head>
   <body>
@@ -7,7 +8,7 @@
     <div style="text-align:center">
       <a href="/students/add">add student</a> || <a href="/">home</a>
     </div>
-    <table border="1">
+    <table border="1" class="table">
       <tr>
         <th>Id</th>
         <th>First Name</th>
@@ -15,11 +16,11 @@
         <th>Email</th>
         <th>Options</th>
       </tr>
-      <% students.forEach(student => { %>
+      <% student.forEach(student => { %>
         <tr>
           <th> <%= student.id %> </th>
-          <th> <%= student.first_name %> </th>
-          <th> <%= student.last_name %> </th>
+          <th> <%= student.firstName %> </th>
+          <th> <%= student.lastName %> </th>
           <th> <%= student.email %> </th>
           <th> <a href="/students/edit/<%=student.id%>">Edit</a> | <a href="/students/delete/<%=student.id%>" onclick="return confirm('Delete this student?')">Delete</a></th>
         </tr>

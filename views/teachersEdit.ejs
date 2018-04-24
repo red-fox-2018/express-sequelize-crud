@@ -9,9 +9,9 @@
     </div>
     <form action="/teachers/edit/<%= teacher.id %>" method="POST">
       First name: <br/>
-      <input type="text" name="first_name" value="<%= teacher.first_name %>"> <br/>
+      <input type="text" name="firstName" value="<%= %>"> <br/>
       Last name: <br/>
-      <input type="text" name="last_name" value="<%= teacher.last_name %>"> <br/>
+      <input type="text" name="lastName" value="<%=  %>"> <br/>
       Email: <br/>
       <input type="text" name="email" value="<%= teacher.email %>"> <br/> <br/>
       <input type="submit" onclick="return alert('Data edited!')" value="Edit Teacher">
