@@ -43,7 +43,7 @@
       <td><%= student.first_name %></td>
       <td><%= student.last_name %></td>
       <td><%= student.email %></td>
-      <td><a href="students/edit/<% student.id %>"</a>Edit</a> | <a href="students/delete/:id">Delete</a></td>
+      <td><a href="/students/edit/<%=student.id%>"</a>Edit</a> | <a href="students/delete/<%=student.id%>">Delete</a></td>
       </tr>
       <% }) %>
     </table>
