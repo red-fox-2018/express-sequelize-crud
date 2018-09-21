@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>Teachers Data</title>
+  </head>
+  <body>
+    <h1 align="center">Teachers Data</h1>
+    <div style="text-align:center">
+      <a href="/teachers/add">add teacher</a> || <a href="/">home</a>
+    </div>
+    <table border="1" class="table">
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Options</th>
+      </tr>
+      <% teacher.forEach(teacher => { %>
+        <tr>
+          <th> <%= teacher.id %> </th>
+          <th> <%= teacher.firstName %> </th>
+          <th> <%= teacher.lastName %> </th>
+          <th> <%= teacher.email %> </th>
+          <th> <a href="/teachers/edit/<%=teacher.id%>">Edit</a> | <a href="/teachers/delete/<%=teacher.id%>" onclick="return confirm('Delete this teacher?')">Delete</a></th>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

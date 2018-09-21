@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Student Edit Data</title>
+  </head>
+  <body>
+    <h1 align="center">Edit Student Data</h1>
+    <div style="text-align:center">
+      <a href="/students">show all data</a>
+    </div>
+    <form action="/students/edit/<%= student.id %>" method="POST">
+      First name: <br/>
+      <input type="text" name="firstName"> <br/>
+      Last name: <br/>
+      <input type="text" name="lastName"> <br/>
+      Email: <br/>
+      <input type="text" name="email"   > <br/> 
+      <br/>
+      <input type="submit" onclick="return alert('Data edited!')" value="Edit Student">
+    </form>
+  </body>
+</html>
